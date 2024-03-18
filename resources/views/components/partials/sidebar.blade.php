@@ -1,10 +1,29 @@
-<div :class="{'w-28 pt-20': !isOpen, 'w-48 lg:w-64 pt-20': isOpen}"
-    class="hidden md:block bg-base-100 text-white shadow-xl z-30 transition-width duration-300 fixed inset-y-0">
+<div :class="{'w-32 p-2': !isOpen, 'w-48 lg:w-64 pt-2': isOpen}"
+    class="hidden md:block bg-base-100 text-white  border-r-2 border-accent shadow-xl z-30 transition-width duration-300 fixed inset-y-0">
+
+    <!-- Logo -->
+    <div class="flex items-center text-base-content justify-between mx-3">
+        <div :class="{'text-3xl': isOpen, 'hidden': !isOpen}" class=" w-1/2 my-2 mx-1">
+            <p class="text-left">Simple Projek</p>
+        </div>
+        <div :class="{'hidden': isOpen, 'text-3xl': !isOpen}" class=" w-1/2 my-2 mx-1">
+            <p class="text-left">SM</p>
+        </div>
+        <button @click="isOpen = !isOpen" class="px-4 my-4">
+            <!-- Toggle -->
+            <div x-show="isOpen" class="ml-6">
+                <i class="far fa-caret-square-left text-2xl"></i>
+            </div>
+            <div x-show="!isOpen" class="ml-3">
+                <i class="far fa-caret-square-right text-2xl"></i>
+            </div>
+        </button>
+    </div>
     <!-- Sidebar Content -->
-    <ul class="menu text-lg mt-3">
+    <ul class="menu text-xl mt-3">
         <li class="py-2">
             <a href="{{route('dashboard')}}"
-                class="flex items-center px-4 py-4 my-1 hover:bg-primary hover:bg-opacity-40 hover:text-slate-600 hover:border-2 hover:border-accent  {{ request()->routeIs('dashboard') ? 'text-base-100 bg-primary ' : 'text-base-content' }}">
+                class="flex items-center px-4 py-4 my-1 hover:bg-primary font-semibold hover:bg-opacity-50 hover:text-slate-600 hover:border-2 hover:border-accent {{ request()->routeIs('dashboard') ? 'text-base-100 bg-primary ' : 'text-base-content' }}">
                 <i class="fas fa-home"></i>
                 <span class="ml-2" x-show="isOpen">Dashboard</span>
             </a>
