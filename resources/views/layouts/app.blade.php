@@ -9,8 +9,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;1,400;1,700&display=swap" rel="stylesheet">
+
     <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4b50fceef6.js" crossorigin="anonymous"></script>
+    
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -34,7 +36,7 @@
         @include('components.partials.sidebar')
         
         <!-- Main Content -->
-        <main :class="{'md:ml-48 lg:ml-64 pt-28': isOpen, 'md:ml-28 pt-24': !isOpen}" class="p-4 mb-12">
+        <main :class="{'md:ml-48 lg:ml-64 pt-28': isOpen, 'md:ml-32 pt-24': !isOpen}" class="p-4 mb-12">
             <!-- Your page content here -->
             {{ $slot }}
             

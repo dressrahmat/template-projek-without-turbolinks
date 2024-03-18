@@ -3,6 +3,7 @@
 use App\Livewire\Profile\ProfileForm;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
+use App\Livewire\Permissions\PermissionsIndex;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/akun', [ProfileController::class, 'destroy'])->name('akun.destroy');
 
     Route::get('/profile', ProfileForm::class)->name('profile.form');
+
+    Route::get('/permissions', PermissionsIndex::class)->name('permissions.index');
 });
 
 require __DIR__.'/auth.php';
