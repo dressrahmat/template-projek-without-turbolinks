@@ -35,8 +35,8 @@
                 <span class="ml-2" x-show="isOpen">Masjid</span>
             </a>
         </li> --}}
-        <li class="py-2 {{ request()->routeIs('permissions.*') || request()->routeIs('role.*') || request()->routeIs('user.*') ? 'glass rounded-md' : '' }}">
-            <details {{ request()->routeIs('permissions.*') || request()->routeIs('role.*') || request()->routeIs('user.*') ? 'open' : '' }}>
+        <li class="py-2 {{ request()->routeIs('permissions.*') || request()->routeIs('roles.*') || request()->routeIs('user.*') ? 'glass rounded-md' : '' }}">
+            <details {{ request()->routeIs('permissions.*') || request()->routeIs('roles.*') || request()->routeIs('user.*') ? 'open' : '' }}>
                 <summary class="bg-transparent text-base-content hover:bg-primary hover:text-base-100 py-4">
                     <i class="fa fa-solid fa-toolbox"></i>
                     <span class="ml-2" x-show="isOpen">Setting</span>
@@ -49,14 +49,14 @@
                             <span class="ml-2" x-show="isOpen">Hak Akses</span>
                         </a>
                     </li>
-                    {{-- <li class="{{ request()->routeIs('role.index') ? 'bg-gray-900 glass rounded-md' : '' }}">
-                        <a href="{{route('role.index')}}"
-                            class="flex items-center px-4 py-2 my-1 text-base-content">
+                    <li>
+                        <a href="{{route('roles.index')}}"
+                            class="flex items-center px-4 py-4 my-1 hover:bg-primary font-semibold hover:bg-opacity-50 hover:text-slate-600 hover:border-2 hover:border-accent {{ request()->routeIs('roles.index') ? 'text-base-100 bg-primary ' : 'text-base-content' }}">
                             <i class="fas fa-plus-circle"></i>
-                            <span class="ml-2" x-show="isOpen">Role</span>
+                            <span class="ml-2" x-show="isOpen">Jabatan</span>
                         </a>
                     </li>
-                    <li class="{{ request()->routeIs('user.*') ? 'bg-gray-900 glass rounded-md' : '' }}">
+                    {{-- <li class="{{ request()->routeIs('user.*') ? 'bg-gray-900 glass rounded-md' : '' }}">
                         <a href="{{route('user.index')}}"
                             class="flex items-center px-4 py-2 my-1 text-base-content">
                             <i class="fas fa-user"></i>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Roles\RolesIndex;
 use App\Livewire\Profile\ProfileForm;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
@@ -32,6 +33,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', ProfileForm::class)->name('profile.form');
 
     Route::get('/permissions', PermissionsIndex::class)->name('permissions.index');
+
+    Route::get('/roles', RolesIndex::class)->name('roles.index');
 });
 
 require __DIR__.'/auth.php';
